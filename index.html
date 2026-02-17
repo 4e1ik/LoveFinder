@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoveFinder — сайт знакомств</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <input type="file" id="avatar-input" accept="image/*" class="avatar-input" aria-hidden="true" />
+
+  <div class="page">
+    <nav class="bottom-nav">
+      <div class="bottom-nav-inner">
+        <button type="button" class="nav-item"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><span class="nav-label">Поиск</span></button>
+        <button type="button" class="nav-item"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="nav-label">Сообщения</span></button>
+        <button type="button" class="nav-item"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span class="nav-label">Лайки</span></button>
+        <button type="button" class="nav-item nav-item--active"><span class="nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="nav-label">Профиль</span></button>
+      </div>
+    </nav>
+
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-brand">
+          <div class="sidebar-logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+          <h1 class="sidebar-title"><span class="sidebar-title-part">Love</span><span class="sidebar-title-part sidebar-title-part--purple">Finder</span></h1>
+        </div>
+        <nav class="sidebar-nav">
+          <button type="button" class="sidebar-nav-item"><span class="sidebar-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><span>Поиск</span></button>
+          <button type="button" class="sidebar-nav-item"><span class="sidebar-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span>Сообщения</span></button>
+          <button type="button" class="sidebar-nav-item"><span class="sidebar-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span>Лайки</span></button>
+          <button type="button" class="sidebar-nav-item sidebar-nav-item--active"><span class="sidebar-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span>Профиль</span></button>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="container">
+        <header class="profile-header">
+          <div class="profile-header-bg"></div>
+          <div class="profile-header-content">
+            <div class="profile-photo-wrap">
+              <div class="profile-photo-box">
+                <img id="profile-avatar" src="https://i.imgur.com/LwofhRt.jpeg" alt="Профиль" class="profile-avatar" />
+              </div>
+              <button type="button" class="profile-photo-edit" id="btn-avatar-edit" aria-label="Сменить фото">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </button>
+            </div>
+            <button type="button" class="profile-photo-btn" id="btn-avatar-update">Обновить фото</button>
+          </div>
+        </header>
+
+        <div class="content">
+          <section class="profile-info">
+            <h2 class="profile-info-name">Надежда Анатольевна</h2>
+            <div class="profile-info-grid">
+              <div class="profile-info-col">
+                <div class="info-row">
+                  <div class="info-row-icon info-row-icon--rose"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></div>
+                  <div class="info-row-text"><span class="info-row-label">Возраст</span><span class="info-row-value">49 лет</span></div>
+                </div>
+                <div class="info-row">
+                  <div class="info-row-icon info-row-icon--blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 0 0 0-8 4 4 0 0 1 0 8z"/><line x1="12" x2="12" y1="2" y2="4"/><line x1="12" x2="12" y1="20" y2="22"/><line x1="2" x2="4" y1="12" y2="12"/><line x1="20" x2="22" y1="12" y2="12"/></svg></div>
+                  <div class="info-row-text"><span class="info-row-label">Цвет глаз</span><span class="info-row-value">Голубые</span></div>
+                </div>
+                <div class="info-row">
+                  <div class="info-row-icon info-row-icon--purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="m8 12 4 4 4-4"/><path d="M3 21h18"/><path d="M3 3h18"/></svg></div>
+                  <div class="info-row-text"><span class="info-row-label">Вес</span><span class="info-row-value">Не скажу 😉</span></div>
+                </div>
+              </div>
+              <div class="profile-info-col">
+                <div class="info-row">
+                  <div class="info-row-icon info-row-icon--pink"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+                  <div class="info-row-text"><span class="info-row-label">Семейное положение</span><span class="info-row-value">Не замужем</span></div>
+                </div>
+                <div class="info-row">
+                  <div class="info-row-icon info-row-icon--indigo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+                  <div class="info-row-text"><span class="info-row-label">Любимая музыка</span><span class="info-row-value">Егор Крид</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="status-card">
+            <div class="status-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+            <div class="status-card-body">
+              <h3 class="status-card-title">О себе</h3>
+              <p class="status-card-text">Нахожусь в активном поиске серьезного, надежного и заботливого мужчины для создания крепких отношений. Ценю честность, чувство юмора и умение держать слово. Готова к новым знакомствам, приятному общению и, возможно, к чему-то большему ❤️</p>
+            </div>
+          </section>
+
+          <div class="action-buttons">
+            <button type="button" class="btn btn-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Написать сообщение
+            </button>
+            <div class="action-buttons-secondary">
+              <button type="button" class="btn btn-secondary btn-secondary--rose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                Избранное
+              </button>
+              <button type="button" class="btn btn-secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                Изменить
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-spacer"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>
